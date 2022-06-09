@@ -1,4 +1,4 @@
-## EXAMEN PRIMERA EVALUACIÓN (2021/22) 4-ABR-2021
+## EXAMEN PRIMERA EVALUACIÓN (2021/22) 13-DIC-2021
 Escribir una aplicación web en PHP usando el framework Laravel. La finalidad principal de la aplicación será la de gestionar las calificaciones y los criterios de evaluación (CE) de un grupo de alumnos en una asignatura.
 
 Cada alumno puede tener cero, una o varias notas asociadas a un mismo CE.
