@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AlumnoController;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +22,12 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('alumnos', AlumnoController::class);
+
+    Route::get('alumnos/criterios/{id}', [AlumnoController::class, 'alumnosCriterios'])
+        ->name('alumnos.criterios');
+});
 
 require __DIR__.'/auth.php';

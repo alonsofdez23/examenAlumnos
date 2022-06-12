@@ -15,7 +15,9 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        //
+        return view('alumnos.index', [
+            'alumnos' => Alumno::all(),
+        ]);
     }
 
     /**
@@ -25,7 +27,7 @@ class AlumnoController extends Controller
      */
     public function create()
     {
-        //
+        return view('alumnos.create');
     }
 
     /**
@@ -36,7 +38,11 @@ class AlumnoController extends Controller
      */
     public function store(StoreAlumnoRequest $request)
     {
-        //
+        $alumno = new Alumno($request->validated());
+        $alumno->save();
+
+        return redirect()->route('alumnos.index')
+            ->with('success', "Alumno $alumno->nombre creado correctamente");
     }
 
     /**
@@ -47,7 +53,9 @@ class AlumnoController extends Controller
      */
     public function show(Alumno $alumno)
     {
-        //
+        return view('alumnos.show', [
+            'alumno' => $alumno,
+        ]);
     }
 
     /**
@@ -58,7 +66,9 @@ class AlumnoController extends Controller
      */
     public function edit(Alumno $alumno)
     {
-        //
+        return view('alumnos.edit', [
+            'alumno' => $alumno,
+        ]);
     }
 
     /**
@@ -70,7 +80,11 @@ class AlumnoController extends Controller
      */
     public function update(UpdateAlumnoRequest $request, Alumno $alumno)
     {
-        //
+        $alumno->fill($request->validated());
+        $alumno->save();
+
+        return redirect()->route('alumnos.index')
+            ->with('success', "Alumno $alumno->nombre editado correctamente");
     }
 
     /**
@@ -81,6 +95,9 @@ class AlumnoController extends Controller
      */
     public function destroy(Alumno $alumno)
     {
-        //
+        $alumno->delete();
+
+        return redirect()->route('alumnos.index')
+            ->with('success', "Alumno $alumno->nombre borrado correctamente");
     }
 }
