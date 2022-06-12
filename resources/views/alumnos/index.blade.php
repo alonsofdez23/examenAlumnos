@@ -28,6 +28,7 @@
                                     <thead class="bg-gray-50">
                                     <tr>
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nota media</th>
                                         <th scope="col" class="relative px-6 py-3">
                                         <span class="sr-only">Edit/Delete</span>
                                         </th>
@@ -41,6 +42,11 @@
                                                         <a href="{{ route('alumnos.show', $alumno) }}">
                                                             {{ $alumno->nombre }}
                                                         </a>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <div class="text-sm font-medium text-gray-900">
+                                                        {{ $alumno->notas_avg_nota }}
                                                     </div>
                                                 </td>
                                                 <td class="px-6 py-4 inline-flex">

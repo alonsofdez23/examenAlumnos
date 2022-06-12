@@ -16,7 +16,7 @@ class AlumnoController extends Controller
     public function index()
     {
         return view('alumnos.index', [
-            'alumnos' => Alumno::all(),
+            'alumnos' => Alumno::withAvg('notas', 'nota')->get(),
         ]);
     }
 
