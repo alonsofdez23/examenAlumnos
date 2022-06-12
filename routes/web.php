@@ -26,7 +26,7 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth'])->group(function () {
     Route::resource('alumnos', AlumnoController::class);
 
-    Route::get('alumnos/criterios/{id}', [AlumnoController::class, 'alumnosCriterios'])
+    Route::get('alumnos/criterios/{alumno}', [AlumnoController::class, 'alumnosCriterios'])
         ->name('alumnos.criterios');
 });
 

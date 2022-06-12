@@ -100,4 +100,11 @@ class AlumnoController extends Controller
         return redirect()->route('alumnos.index')
             ->with('success', "Alumno $alumno->nombre borrado correctamente");
     }
+
+    public function alumnosCriterios(Alumno $alumno)
+    {
+        return view('alumnos.criterios', [
+            'alumno' => $alumno,
+        ]);
+    }
 }
