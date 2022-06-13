@@ -46,7 +46,7 @@
                                                 </td>
                                                 <td class="px-6 py-4">
                                                     <div class="text-sm font-medium text-gray-900">
-                                                        {{ $alumno->notas_avg_nota }}
+                                                        {{ round($alumno->notas_avg_nota, 2) }}
                                                     </div>
                                                 </td>
                                                 <td class="px-6 py-4 inline-flex">
